@@ -1,0 +1,64 @@
+
+
+                                  Android Tips 
+
+    Find the location of your Android SDK by opening Android Studio -> SDK
+    Manager and noting the value of SDK Path.
+    (e.g. /Users/paulvonschrottky/adt/sdk)
+
+    Type 
+        ~/adt/sdk/tools/android list targets
+    and note the target id of the highest version.
+
+    Execute the following to create a project in the current directory (we're
+    using a target id of 1).
+        ~/adt/sdk/tools/android create project --target 1 --name MyFirstApp \
+        --path ./MyFirstApp --activity MyActivity \
+        --package com.example.myfirstapp
+
+    Do one of the following options
+        a) Running The App In The Emulator
+           
+           1) Type
+                  ~/adt/sdk/tools/android avd
+              to open the emulator (AVD) manager.
+           
+           2) Create a new device by following the on-screen prompts. Then
+              select the device from the list and click Start to start the 
+              device.
+           
+           3) In the root of the Android project, type
+                  ant debug
+              to compile the app.
+           
+           4) In the root directory of the Android project, type
+                  ~/adt/sdk/platform-tools/adb install bin/MyFirstApp-debug.apk
+              to run the app in the emulator.
+
+           Note: If the installation fails with
+               Failure [INSTALL_FAILED_ALREADY_EXISTS]
+           that's because the app is already installed. To replace the existing
+           app, use the -r option on the adb install command, like this
+               ~/adt/sdk/platform-tools/adb install -r bin/MyFirstApp-debug.apk
+
+        b) Running The App On A Real Device
+           
+           1) Connect the device to the Mac via USB. If on an older device,
+              enable development on the device by going to Settings -> 
+              Applications -> Development and enable USB Debugging. If using a
+              newer device, try going to Setting -> About Phone and tap Build 
+              Number 7 times, then go to the previous screen to find the
+              developer options.
+           2) Perform steps 3) and 4) from option a) above.
+
+
+
+
+            
+                          
+
+
+    
+
+
+

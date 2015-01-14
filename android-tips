@@ -35,11 +35,6 @@
                   ~/adt/sdk/platform-tools/adb install bin/MyFirstApp-debug.apk
               to run the app in the emulator.
 
-           Note: If the installation fails with
-               Failure [INSTALL_FAILED_ALREADY_EXISTS]
-           that's because the app is already installed. To replace the existing
-           app, use the -r option on the adb install command, like this
-               ~/adt/sdk/platform-tools/adb install -r bin/MyFirstApp-debug.apk
 
         b) Running The App On A Real Device
            
@@ -50,6 +45,12 @@
               Number 7 times, then go to the previous screen to find the
               developer options.
            2) Perform steps 3) and 4) from option a) above.
+
+        Note: If the installation fails with
+            Failure [INSTALL_FAILED_ALREADY_EXISTS]
+        that's because the app is already installed. To replace the existing
+        app, use the -r option on the adb install command, like this
+            ~/adt/sdk/platform-tools/adb install -r bin/MyFirstApp-debug.apk
 
 
 

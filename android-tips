@@ -1,6 +1,13 @@
 
 
-                                  Android Tips 
+                           --------------------------
+                           |      Android Tips      |
+                           --------------------------
+
+
+
+                     *** CHAPTER 1: Saying Hello World ***
+
 
     Find the location of your Android SDK by opening Android Studio -> SDK
     Manager and noting the value of SDK Path.
@@ -16,7 +23,7 @@
         --path ./MyFirstApp --activity MyActivity \
         --package com.example.myfirstapp
 
-    Do one of the following options
+    To test the app, do one of the following options
         a) Running The App In The Emulator
            
            1) Type
@@ -53,6 +60,35 @@
             ~/adt/sdk/platform-tools/adb install -r bin/MyFirstApp-debug.apk
 
 
+                     *** CHAPTER 2: Using Gradle ***
+
+       
+    It's recommended to use Gradle instead of ant. To make the switch, open 
+    Android Studio and close any projects, leaving the small Welcome To Android
+    Studio window. Select Import Non-Android Studio Project. Select the
+    existing project, Next, and Finish. 
+
+    Now that we're using gradle instead of ant, the steps to build the project
+    are a little different. Do one of the following
+
+        a) Running The App In The Emulator
+           
+           1) Repeat a) 1) from the previous chapter. Start the emulator that we
+              created in Chapter 1. 
+
+           2) In the root of the Android project, type
+                  ./gradlew installDebug 
+
+        b) Running The App On A Real Device
+           1) Connect the device, close the emulator, and run,
+                  ./gradlew installDebug 
+
+           Note: To launch the app via the command-line, type
+               ~/adt/sdk/platform-tools/adb shell am start -n \
+                   com.example.myfirstapp/.MyActivity
+                   
+               This 
+                
 
 
             
